@@ -1,0 +1,8 @@
+
+{
+  "name": "CSEC Time Travel Fixer",
+  "description": "Participate in the 'Time Travel Fix' challenge by remastering old posters into sleek, modern 2025 designs using advanced AI vision and generation.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
