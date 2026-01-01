@@ -18,7 +18,8 @@ import {
   Shield,
   Database,
   Users,
-  Calendar
+  Calendar,
+  Timer
 } from 'lucide-react';
 
 const gemini = new GeminiService();
@@ -283,6 +284,7 @@ const App: React.FC = () => {
               { name: 'Development', icon: Cpu, desc: 'Grid/Code UI' },
               { name: 'Cyber', icon: Shield, desc: 'Secure Dark UI' },
               { name: 'Data Science', icon: Database, desc: 'Network Vibe' },
+              { name: 'Competitive Programming', icon: Timer, desc: 'Speed/Precision' },
               { name: 'Capacity', icon: Users, desc: 'Growth/Social' },
               { name: 'Events', icon: Calendar, desc: 'Dynamic/Cinematic' }
             ].map((div) => (

@@ -1,11 +1,17 @@
 
+
 import { GoogleGenAI, Type } from "@google/genai";
 
 export class GeminiService {
+
   private ai: GoogleGenAI;
 
   constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const apiKey = import.meta.env.VITE_API_KEY;
+    if (!apiKey) {
+      throw new Error("VITE_API_KEY is not set. Please check your .env file.");
+    }
+    this.ai = new GoogleGenAI({ apiKey });
   }
 
   async analyzePoster(base64Image: string): Promise<{ text: string; division: string }> {
@@ -20,9 +26,7 @@ export class GeminiService {
             },
           },
           {
-            text: `1. Extract all text from this poster (Title, Date, Topic). 
-            2. Based on the content, categorize this poster into EXACTLY one of these divisions: 'Development', 'Cyber', 'Data Science', 'Capacity Building', or 'General/Events'.
-            Return the result in JSON format with keys 'text' and 'division'.`,
+            text: `1. Extract all text from this poster (Title, Date, Topic).\n2. Based on the content, categorize this poster into EXACTLY one of these divisions: 'Development', 'Cyber', 'Data Science', 'Capacity Building', 'Competitive Programming', or 'General/Events'.\nReturn the result in JSON format with keys 'text' and 'division'.`,
           },
         ],
       },
@@ -48,7 +52,7 @@ export class GeminiService {
     };
 
     const styleContext = divisionStyles[division] || divisionStyles['General/Events'];
-    const customContext = userInstructions ? `User's specific creative direction: "${userInstructions}"` : "";
+    const customContext = userInstructions ? `User\'s specific creative direction: "${userInstructions}"` : "";
 
     const prompt = `Task: Create a world-class 2025 social media poster for the CSEC club.
     
