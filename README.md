@@ -94,7 +94,6 @@ Built for:
 **CHALLENGE #01 – The Time Travel Fix**
 Redesign old CSEC posters and show the power of the new social media team.
 
----
 
 ## 👥 Credits
 
