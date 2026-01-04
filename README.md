@@ -2,7 +2,7 @@
 
 **Challenge #01 – CSEC Social Media Team (2025)**
 
-A simple AI-powered project built with **Google AI Studio** and **me** to redesign old CSEC posters into clean, modern 2025 visuals — without changing the original person or text.
+
 
 ---
 
